@@ -11,16 +11,5 @@ fn main() {
         .add_plugins(PhysicsPlugins::default())
         .add_plugins(LdtkPlugin)
         .add_plugins(CharacterControllerPlugin)
-        .add_systems(Startup, setup)
         .run();
-}
-
-fn setup(
-    mut c: Commands,
-    a: Res<AssetServer>,
-) {
-    c.spawn(SpriteBundle {
-        texture: a.load("../assets/test.png"),
-        ..Default::default()
-    });
 }
