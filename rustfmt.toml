@@ -1,0 +1,15 @@
+# See link for more info on these settings
+# https://rust-lang.github.io/rustfmt/?version=v1.6.0
+
+# Reformat struct initialization to use shorthand whenever possible
+use_field_init_shorthand = true
+
+# Ensures newline character is consistent 
+newline_style = "Unix"
+
+# This forces function to display multiple parameters vertically
+# Looks a lot cleaner for Bevy systems
+fn_params_layout = "Vertical"
+
+# This forces any method chains over 50 chars long to stack instead
+chain_width = 50

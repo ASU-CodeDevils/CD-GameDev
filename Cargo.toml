@@ -1,0 +1,17 @@
+[workspace]
+resolver = "2"
+members = [
+    "game",
+]
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[workspace.dependencies]
+bevy = { version = "0.14.2", features = ["dynamic_linking"] }
+avian2d = "0.1"
+bevy_ecs_tilemap = "0.14"
+bevy_ecs_ldtk = "0.10"

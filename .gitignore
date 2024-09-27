@@ -1,0 +1,17 @@
+# Taken from:
+# https://github.com/bevyengine/bevy/blob/main/.gitignore
+
+/target
+crates/*/target
+**/*.rs.bk
+Cargo.lock
+.cargo/config
+.cargo/config.toml
+/.idea
+/.vscode
+.zed
+/benches/target
+/tools/compile_fail_utils/target
+dxcompiler.dll
+dxil.dll
+

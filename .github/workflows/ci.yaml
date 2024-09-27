@@ -1,0 +1,48 @@
+# Most elements taken from:  
+# https://github.com/NiklasEi/bevy_game_template/blob/main/.github/workflows/ci.yml
+# https://github.com/bevyengine/bevy/blob/main/.github/workflows/ci.yml
+
+name: CI
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ubuntu-latest-cargo-lint-${{ hashFiles('**/Cargo.toml') }}
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      - name: Install alsa and udev
+        run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev
+      - name: Run clippy
+        run: cargo clippy --workspace --all-targets --all-features -- -Dwarnings
+      - name: Check format
+        run: cargo fmt --all -- --check
+  typos:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Check for typos
+          uses: crate-ci/typos@v1.24.6
+        - name: Typos info
+          if: failure()
+          run: |
+            echo 'To fix typos, please run `typos -w`'
+            echo 'To check for a diff, run `typos`'
+            echo 'You can find typos here: https://crates.io/crates/typos'
+            echo 'if you use VSCode, you can also install `Typos Spell Checker'
+            echo 'You can find the extension here: https://marketplace.visualstudio.com/items?itemName=tekumara.typos-vscode'

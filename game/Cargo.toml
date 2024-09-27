@@ -1,0 +1,11 @@
+[package]
+name = "game"
+version = "0.1.0"
+edition = "2021"
+workspace = ".."
+
+[dependencies]
+bevy.workspace = true
+avian2d.workspace = true
+bevy_ecs_tilemap.workspace = true
+bevy_ecs_ldtk.workspace = true
