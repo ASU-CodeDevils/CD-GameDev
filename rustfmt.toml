@@ -9,7 +9,7 @@ newline_style = "Unix"
 
 # This forces function to display multiple parameters vertically
 # Looks a lot cleaner for Bevy systems
-fn_params_layout = "Vertical"
+#fn_params_layout = "Vertical"
 
 # This forces any method chains over 50 chars long to stack instead
 chain_width = 50
