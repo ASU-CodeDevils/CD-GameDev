@@ -6,10 +6,7 @@ use bevy::{ecs::query::Has, prelude::*};
 pub struct CharacterControllerPlugin;
 
 impl Plugin for CharacterControllerPlugin {
-    fn build(
-        &self,
-        app: &mut App,
-    ) {
+    fn build(&self, app: &mut App) {
         app.add_event::<MovementAction>().add_systems(
             Update,
             (
