@@ -48,7 +48,7 @@ Please read the [contribution guide](./CONTRIBUTING.md).
 - [Rust by example:](https://doc.rust-lang.org/stable/rust-by-example/) Lots of great basic examples to use as reference.
 
 ## Bevy 
-- [What is an ECS:](https://www.youtube.com/watch?v=AirfWcVOEHw) Brief overview of what is an ECS.
+- [Bevy: A quick introduction:](https://www.youtube.com/watch?v=HGhQuebcHL4) An introduction to basic Bevy concepts.
 - [Quick start guide:](https://bevyengine.org/learn/quick-start/introduction/) The official quick start guide.
 - [Zymartu Games' Bevy tutorial series](https://youtube.com/playlist?list=PL2wAo2qwCxGDp9fzBOTy_kpUTSwM1iWWd&si=4832EhayZTvKbysX) A great tutorial series that I highly recommend to get started with Bevy.
 
@@ -69,6 +69,7 @@ Please read the [contribution guide](./CONTRIBUTING.md).
 - [Bevy's official examples:](https://bevyengine.org/examples/) One-stop shop for bevy code examples.
 
 ### Unofficial resources
+- [What is an ECS:](https://www.youtube.com/watch?v=AirfWcVOEHw) Brief overview of what is an ECS.
 - [The Unofficial Bevy Cheat Book:](https://bevy-cheatbook.github.io/) Another great resource for learning Bevy.
 - [A collection of other Bevy resources:](https://github.com/Anshorei/awesome-bevy) A compilation of Bevy related resources.
 - [Good breakdown of Bevy ECS](https://www.youtube.com/watch?v=ocacUsyJXpg) A closer look to how Bevy works.
