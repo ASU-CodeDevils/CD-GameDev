@@ -35,7 +35,7 @@ mix and match elements from multiple genres as we progress.
 ## Keeping compilation times short
 The repo is already setup to tell the Rust compiler to use all the optimization possibles, but this mostly helps during compilation between iterations. The first time you compile, or if there are new crates added to the project, you might have to compile everything again, or compile a big part of it, which can be lengthy. But usually, compilation between iterations should only take a few seconds on average.
 
-A way to keep compilation times short between iterations (or just get them started ahead of time), is to use a tool like [`cargo watch`](https://github.com/watchexec/cargo-watch) or [`bacon`](https://github.com/Canop/bacon). These tools allows you to set up a build/check/test/run command whenever a file is detected to have changed. This will ensure that the compilation process is completed as early as possible.
+A way to keep compilation times short between iterations (or just get them started ahead of time), is to use a tool like [`bacon`](https://github.com/Canop/bacon). This tool allows you to set up a build/check/test/run command whenever a file is detected to have changed. This will ensure that the compilation process is completed as early as possible. To install it, simply run `cargo install --locked bacon`. Then you can run it by running `bacon` in the project root directory.
 
 ## Before contributing
 Please read the [contribution guide](./CONTRIBUTING.md).
