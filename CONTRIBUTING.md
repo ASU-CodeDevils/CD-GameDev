@@ -1,4 +1,54 @@
 # Contribution Guide
+
+## Branch naming
+When naming your branch, follow the following convention:
+`<TYPE>/<ISSUE-ID>/<SHORT-DESCRIPTION>`
+
+### Types
+- Enhancements and new features: `feature`
+- Bug fix: `bugfix`
+- Assets: `asset`
+- Refactors: `refactor`
+- Documentation: `docs`
+- Updating dependencies: `update`
+
+### Issue ID
+The issue ID associated with the issue you are working on. If there are no issues, then please create one first.
+
+### Short description
+Use kebab-case and keep it as short, but descriptive as possible.
+
+### Examples
+You are working on issue #10, which is to create a new double jump ability, then you would name your branch:\
+`feature/10/double-jump`
+
+You are creating a new spritesheet for a new enemy, as instructed in issue #24:\
+`asset/24/new-enemy-spritesheet`
+
+## Commit naming and descriptions
+Keep the commit name short and to the point, and use present tense. Within the description, include any relevant information on why you made specific decisions. 
+
+### Examples
+You are working on creating a new double jump ability:
+#### Good commit
+**Commit name:** add double jump\
+**Commit desc:** Created a new component to keep track of current jump count, as opposed to using the player state, as it felt more appropriate for an ECS architecture.
+
+#### Bad commit
+**Commit name:** added double jump\
+**Commit desc:** I added a double jump ability
+
+#### Very bad commit
+**Commit name:** work in progress commit\
+**Commit desc:** The player can jump too many times, just gotta fix that and then should be good to go!
+
+### Good practices
+When submitting your work through a pull request, ensure that commits always represents a fully working piece of code.
+If you have any intermediate commits, which can be pretty common when working on
+an issue, make sure you squash all intermediate commits. Generally, you should
+only be submitting a single commit in your pull request, unless you are working
+on a really big issue.
+
 ## Plugins and bundles
 When you code, try to use bevy plugins and bundles whenever possible. Use Rust modules to isolate these plugins and bundles.
 
