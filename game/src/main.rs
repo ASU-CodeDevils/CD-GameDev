@@ -14,7 +14,6 @@ fn main() {
         .add_plugins(LdtkPlugin)
         .add_plugins(CharacterControllerPlugin)
         //user plugins
-        //debug plugin
         .add_plugins(DebugPlugin)
         .run();
 }
