@@ -1,8 +1,10 @@
+mod debug;
 mod movement;
 
 use avian2d::prelude::*;
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
+use debug::debug_plugin::DebugPlugin;
 use movement::plugin::CharacterControllerPlugin;
 
 fn main() {
@@ -11,5 +13,7 @@ fn main() {
         .add_plugins(PhysicsPlugins::default())
         .add_plugins(LdtkPlugin)
         .add_plugins(CharacterControllerPlugin)
+        //user plugins
+        .add_plugins(DebugPlugin)
         .run();
 }
