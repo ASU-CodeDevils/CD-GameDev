@@ -1,4 +1,29 @@
 # Contribution Guide
+## Who can contribute
+Only members of the ASU CodeDevils organization who have applied through 
+[the website](https://www.codedevils.org/projects/gamedev) are allowed to contribute to this repo.
+
+## Calling dibs on an issue
+Before working on an issue, be sure to comment on that issue to mention that you
+want to work on it, and a project lead will assign the issue to you. You will be
+expected to show satisfactory progress within a week of being assigned an issue.
+If not enough progress was made, you will be unassigned from the issue so that
+other members can try their hand at it.
+
+>[!IMPORTANT]
+> Pull requests made to fix an issue that you are not assigned to will be
+> immediately closed.
+
+## One issue at a time
+You are only allowed to tackle one issue at a time. If you wish to work on a
+different issue, let us know that you no longer want to work on the currently
+assigned issue.
+
+>[!NOTE]
+> If it is suspected that you are working on issues before being assigned to
+> them, i.e. you get assigned an issue and come up with a fully working solution
+> moments later to "speedrun" contributions, the project lead reserves the right
+> to limit the rate at which you can be assigned issues.
 
 ## Branch naming
 When naming your branch, follow the following convention:
