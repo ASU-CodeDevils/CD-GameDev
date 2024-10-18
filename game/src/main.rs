@@ -1,11 +1,15 @@
+#[allow(dead_code)]
+mod components;
 mod debug;
 mod movement;
+mod plugins;
 
 use avian2d::prelude::*;
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
 use debug::debug_plugin::DebugPlugin;
 use movement::plugin::CharacterControllerPlugin;
+use plugins::health_and_damage_plugin::HealthAndDamagePlugin;
 
 fn main() {
     App::new()
@@ -14,6 +18,7 @@ fn main() {
         .add_plugins(LdtkPlugin)
         .add_plugins(CharacterControllerPlugin)
         //user plugins
+        .add_plugins(HealthAndDamagePlugin)
         .add_plugins(DebugPlugin)
         .run();
 }
