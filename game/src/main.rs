@@ -1,9 +1,11 @@
-#[allow(dead_code)]
+#![allow(unused)]
+mod animation;
 mod components;
 mod debug;
 mod movement;
 mod plugins;
 
+use crate::animation::animation_system::SpriteAnimationPlugin;
 use avian2d::prelude::*;
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
@@ -20,5 +22,6 @@ fn main() {
         //user plugins
         .add_plugins(HealthAndDamagePlugin)
         .add_plugins(DebugPlugin)
+        .add_plugins(SpriteAnimationPlugin)
         .run();
 }
