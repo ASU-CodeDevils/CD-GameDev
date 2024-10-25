@@ -1,5 +1,7 @@
 use bevy::prelude::*;
 
+use crate::components::{damage::Damage, health::Health, player::Player};
+
 ///This plugin provides terminal debug capabilities
 ///By adding systems, requested information will be printed to the terminal
 pub struct DebugPlugin;
