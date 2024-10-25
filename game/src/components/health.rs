@@ -1,11 +1,11 @@
 use bevy::prelude::*;
 
 ///pointer struct to mark entity as alive
-#[derive(Component, Debug)]
+#[derive(Default, Component, Debug)]
 pub struct Alive;
 
 ///pointer struct to mark entity as dead
-#[derive(Component, Debug)]
+#[derive(Default, Component, Debug)]
 pub struct Dead;
 
 ///Health component to track entity health
