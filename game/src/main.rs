@@ -1,13 +1,19 @@
+#![allow(unused)]
 mod camera;
+mod animation;
+mod components;
 mod debug;
 mod movement;
+mod plugins;
 
+use crate::animation::animation_system::SpriteAnimationPlugin;
 use avian2d::prelude::*;
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
 use camera::camera_plugin::CameraPlugin;
 use debug::debug_plugin::DebugPlugin;
 use movement::plugin::CharacterControllerPlugin;
+use plugins::health_and_damage_plugin::HealthAndDamagePlugin;
 
 fn main() {
     App::new()
@@ -16,7 +22,9 @@ fn main() {
         .add_plugins(LdtkPlugin)
         .add_plugins(CharacterControllerPlugin)
         //user plugins
+        .add_plugins(HealthAndDamagePlugin)
         .add_plugins(DebugPlugin)
         .add_plugins(CameraPlugin)
+        .add_plugins(SpriteAnimationPlugin)
         .run();
 }
