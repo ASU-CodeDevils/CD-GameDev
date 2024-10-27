@@ -1,6 +1,6 @@
 #![allow(unused)]
-mod camera;
 mod animation;
+mod camera;
 mod components;
 mod debug;
 mod movement;
