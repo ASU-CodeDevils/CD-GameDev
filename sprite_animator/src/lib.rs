@@ -66,9 +66,9 @@ impl Default for SpriteAnimData {
 
 impl SpriteAnimData {
     /// Creates a new `SpriteAnimData` struct and defaults to `SpriteAnimMode::Repeating`.
-    pub fn new(name: String, frames: Vec<usize>) -> Self {
+    pub fn new(name: impl Into<String>, frames: Vec<usize>) -> Self {
         Self {
-            name,
+            name: name.into(),
             frames,
             mode: SpriteAnimMode::Repeating,
             ..default()
@@ -212,18 +212,22 @@ impl SpriteAnimController {
 
     /// Sets the current animation to be played.
     /// The animation must be part of the collection owned by the `SpriteAnimController`.
-    pub fn set_current_animation(&mut self, anim_name: &str) -> Result<(), SpriteAnimError> {
-        if !self.collection.contains_key(anim_name) {
+    pub fn set_current_animation(
+        &mut self,
+        anim_name: impl Into<String>,
+    ) -> Result<(), SpriteAnimError> {
+        let anim_name: String = anim_name.into();
+        if !self.collection.contains_key(&anim_name) {
             self.current = self
                 .collection
                 .get("Default")
                 .expect("Default should exist")
                 .clone();
-            return Err(SpriteAnimError::DoesNotExist(anim_name.into()));
+            return Err(SpriteAnimError::DoesNotExist(anim_name));
         }
         self.current = self
             .collection
-            .get(anim_name)
+            .get(&anim_name)
             .expect("Animation should exist")
             .clone();
         Ok(())
