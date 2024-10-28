@@ -163,13 +163,13 @@ pub struct SpriteAnimController {
     fps: f32,
 }
 
-impl SpriteAnimController {
+impl Default for SpriteAnimController {
     /// Creates a new animation controller with a "Default" animation in its collection.
     /// This default animation will always return 0 as the frame to display.
     ///
     /// The default frames per second is 4, but can be changed on instantiation using the
     /// `with_fps` function.
-    pub fn new() -> Self {
+    fn default() -> Self {
         let default = SpriteAnimData::default();
         let mut collection = HashMap::new();
         collection.insert("Default".to_string(), default.clone());
@@ -181,7 +181,9 @@ impl SpriteAnimController {
             timer: Timer::from_seconds(1.0 / fps, TimerMode::Repeating),
         }
     }
+}
 
+impl SpriteAnimController {
     /// Sets the animation that will play by default if trying to play an animation that does not
     /// exist in the collection.
     pub fn with_default_anim(mut self, anim_data: SpriteAnimData) -> Self {
