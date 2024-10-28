@@ -1,11 +1,7 @@
 use core::fmt;
-use std::{thread::current, time::Duration};
+use std::time::Duration;
 
-use bevy::{
-    ecs::event::EventIteratorWithId,
-    prelude::*,
-    utils::{info, HashMap},
-};
+use bevy::{prelude::*, utils::HashMap};
 
 #[derive(Debug)]
 pub enum SpriteAnimError {
