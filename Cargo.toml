@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
-    "game",
+    "game", "sprite_animator",
 ]
 
 [profile.dev]

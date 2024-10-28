@@ -9,3 +9,4 @@ bevy.workspace = true
 avian2d.workspace = true
 bevy_ecs_tilemap.workspace = true
 bevy_ecs_ldtk.workspace = true
+sprite_animator = { path = "../sprite_animator/"}

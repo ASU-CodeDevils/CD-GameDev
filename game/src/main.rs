@@ -1,11 +1,9 @@
 #![allow(unused)]
-mod animation;
 mod components;
 mod debug;
 mod movement;
 mod plugins;
 
-use crate::animation::animation_system::SpriteAnimationPlugin;
 use avian2d::prelude::*;
 use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
@@ -13,6 +11,7 @@ use debug::debug_plugin::DebugPlugin;
 use movement::plugin::CharacterControllerPlugin;
 use plugins::health_and_damage_plugin::HealthAndDamagePlugin;
 use plugins::level_load_plugin::LevelLoadPlugin;
+use sprite_animator::SpriteAnimationPlugin;
 
 fn main() {
     App::new()
