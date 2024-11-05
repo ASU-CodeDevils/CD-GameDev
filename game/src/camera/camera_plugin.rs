@@ -3,11 +3,11 @@ use bevy::{input::mouse::MouseWheel, prelude::*};
 
 pub struct CameraPlugin;
 
-//Component that marks our Camera's current target
+///Component that marks the Camera's current target
 #[derive(Component)]
 pub struct CameraTarget;
 
-//Component that marks our main camera
+///Component that marks the main camera
 #[derive(Component)]
 pub struct MainCamera;
 
@@ -24,23 +24,29 @@ impl Plugin for CameraPlugin {
     }
 }
 
-//Sets up a 2d camera and attaches the MainCamera marker to it
+///Sets up a 2d camera and attaches the MainCamera marker to it
 fn setup_main_camera(mut commands: Commands) {
     commands.spawn((Camera2dBundle::default(), MainCamera));
 }
 
-//Update camera function will have our main camera follow any entity with the CameraTarget tag
+///Update camera function will have the main camera follow any entity with the CameraTarget tag
 fn update_camera(
     mut camera_query: Query<&mut Transform, (With<MainCamera>, Without<CameraTarget>)>,
     target_query: Query<&Transform, (With<CameraTarget>, Without<MainCamera>)>,
 ) {
+    let num_targets = target_query.iter().len();
+
+    if (num_targets > 1) {
+        error!("More than one entity with CameraTarget Component!");
+        return;
+    }
+
     let Ok(mut camera) = camera_query.get_single_mut() else {
-        error!("could not execute query for single MainCamera component");
+        error!("Could not execute query for single MainCamera component");
         return;
     };
 
     let Ok(target) = target_query.get_single() else {
-        error!("Could not execute query for single CameraTarget component");
         return;
     };
 
@@ -51,7 +57,7 @@ fn update_camera(
     camera.translation = direction;
 }
 
-//Camera Zooming Function, uses MouseWheel Scrolling up/down for zooming in/out
+///Camera Zooming Function, uses MouseWheel Scrolling up/down for zooming in/out
 fn zoom_camera(
     mut scroll_event: EventReader<MouseWheel>,
     mut camera: Query<&mut OrthographicProjection, With<MainCamera>>,
